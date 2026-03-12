@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 
 export default function FeaturedProjects() {
   return (
-    <section id="projects" className="py-16 md:py-32 bg-[#1F2D3D]">
+    <section
+      id="projects"
+      className="py-16 md:py-32 bg-[#1F2D3D]"
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-10 md:mb-20">
           <motion.span
@@ -26,9 +29,13 @@ export default function FeaturedProjects() {
           </motion.h2>
         </div>
 
-        <div className="flex md:grid md:grid-cols-2 overflow-x-auto md:overflow-visible snap-x snap-mandatory gap-4 md:gap-8 pb-6 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div className="flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible snap-x snap-mandatory gap-4 md:gap-8 pb-6 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {PROJECTS.map((project, index) => (
-            <ProjectCard project={project} key={project.id} index={index} />
+            <ProjectCard
+              project={project}
+              key={project.id}
+              index={index}
+            />
           ))}
         </div>
       </div>

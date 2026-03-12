@@ -1,49 +1,53 @@
+// 1. Mr Agus Budianto - JL. Markisa
 import cover1 from "../assets/project/1/cover.webp";
+import project1_proc1 from "../assets/project/1/progress/1.webp";
+import project1_proc2 from "../assets/project/1/progress/2.webp";
+import project1_proc3 from "../assets/project/1/progress/3.webp";
+import project1_proc4 from "../assets/project/1/progress/4.webp";
+import project1_proc5 from "../assets/project/1/progress/5.webp";
+import project1_proc6 from "../assets/project/1/progress/6.webp";
+import project1_result1 from "../assets/project/1/result/1.webp";
+import project1_result2 from "../assets/project/1/result/2.webp";
+import project1_result3 from "../assets/project/1/result/3.webp";
+import project1_result4 from "../assets/project/1/result/4.webp";
+import project1_result5 from "../assets/project/1/result/5.webp";
+import project1_result6 from "../assets/project/1/result/6.webp";
 
 export const PROJECTS = [
   {
-    id: 1,
+    id: 15326981,
     title: "Building : Mr. Agus Budianto",
     image: cover1,
+    description:
+      "Proyek Pembangunan Khusus Hunian Mr. Agus Budianto di JL. MARKISA adalah studi kasus yang menunjukkan komitmen kami pada integritas struktural dan transparansi pelaksanaan, dokumentasi proyek ini mencakup seluruh tahapan, mulai dari rencana teknis terperinci yang mencakup Denah Pondasi, Sloof, dan Struktur Balok Baja hingga desain Rencana Atap yang lengkap, serta didukung oleh log visual ekstensif berupa foto dan video progres lapangan (tertanggal dari Juni hingga September 2020).",
     wide: true,
     dark: false,
-    processPhotos: [
-      "https://images.unsplash.com/photo-1541888086425-d81bb192a611?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1504307651254-35680f356f12?q=80&w=2070&auto=format&fit=crop",
+    processPhotos: [project1_proc1, project1_proc2, project1_proc3, project1_proc4, project1_proc5, project1_proc6],
+    resultPhotos: [
+      project1_result1,
+      project1_result2,
+      project1_result3,
+      project1_result4,
+      project1_result5,
+      project1_result6,
     ],
   },
   {
-    id: 2,
-    title: "Renovasi Total Rumah",
-    image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop",
-    wide: false,
-    dark: true,
-    processPhotos: [
-      "https://images.unsplash.com/photo-1621252178044-672522c76a96?q=80&w=2070&auto=format&fit=crop", // Pembongkaran
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2070&auto=format&fit=crop", // Renovasi Ruangan
-    ],
-  },
-  {
-    id: 3,
-    title: "Bangun Ruko 3 Lantai",
-    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop",
-    wide: false,
+    id: 3162890879,
+    title: "Building : Mr. Agus Budianto",
+    image: cover1,
+    description:
+      "Proyek Pembangunan Khusus Hunian Mr. Agus Budianto di JL. MARKISA adalah studi kasus yang menunjukkan komitmen kami pada integritas struktural dan transparansi pelaksanaan, dokumentasi proyek ini mencakup seluruh tahapan, mulai dari rencana teknis terperinci yang mencakup Denah Pondasi, Sloof, dan Struktur Balok Baja hingga desain Rencana Atap yang lengkap, serta didukung oleh log visual ekstensif berupa foto dan video progres lapangan (tertanggal dari Juni hingga September 2020).",
+    wide: true,
     dark: false,
-    processPhotos: [
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop", // Pengecoran
-      "https://images.unsplash.com/photo-1590211247012-a72eb37367ce?q=80&w=2070&auto=format&fit=crop", // Plesteran & Fasad
-    ],
-  },
-  {
-    id: 4,
-    title: "Desain Interior Modern",
-    image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2070&auto=format&fit=crop",
-    wide: false,
-    dark: true,
-    processPhotos: [
-      "https://images.unsplash.com/photo-1540932239986-30128078f3c5?q=80&w=2070&auto=format&fit=crop", // Pembuatan custom furniture
-      "https://images.unsplash.com/photo-1598928506311-c55dd18a0ed7?q=80&w=2070&auto=format&fit=crop", // Instalasi Lighting
+    processPhotos: [project1_proc1, project1_proc2, project1_proc3, project1_proc4, project1_proc5, project1_proc6],
+    resultPhotos: [
+      project1_result1,
+      project1_result2,
+      project1_result3,
+      project1_result4,
+      project1_result5,
+      project1_result6,
     ],
   },
 ];

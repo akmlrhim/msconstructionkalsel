@@ -44,92 +44,126 @@ export default function ProjectDetails() {
 
   return (
     <div className="bg-gradient-to-br from-[#FAF8F5] via-white to-[#EAE5D9] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24">
-
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-gray-500 hover:text-[#1F2D3D] transition-colors mb-8 font-medium text-sm md:text-base"
+          className="inline-flex items-center gap-2 text-gray-500 hover:text-[#1F2D3D] transition-colors mb-8 font-medium text-sm md:text-base group"
         >
-          <ArrowLeft size={20} />
+          <ArrowLeft
+            size={20}
+            className="transition-transform group-hover:-translate-x-1"
+          />
           Kembali
         </Link>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="relative h-[35vh] md:h-[60vh] rounded-3xl overflow-hidden mb-8 md:mb-12"
+          className="relative h-[40vh] md:h-[65vh] rounded-3xl overflow-hidden mb-10 shadow-2xl"
         >
           <img
             src={project.image}
             alt={project.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-16">
-            <span className="text-[#F1C453] font-semibold text-xs md:text-lg mb-2">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+          <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16">
+            <span className="text-[#F1C453] font-semibold text-xs md:text-lg mb-2 uppercase tracking-wider">
               {project.category}
             </span>
-            <h1 className="text-2xl md:text-5xl lg:text-6xl text-white font-serif font-medium leading-tight max-w-4xl">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl text-white font-serif font-medium leading-tight max-w-4xl">
               {project.title}
             </h1>
           </div>
         </motion.div>
 
-      </div>
-
-      {project.processPhotos && project.processPhotos.length > 0 && (
-        <div className="max-w-7xl mx-auto px-6 md:px-12 mt-16 md:mt-20">
-          <div className="mb-8 md:mb-10">
-            <span className="text-xs md:text-lg font-sans font-medium text-gray-500 mb-2 block">
-              Galeri
-            </span>
-            <h2 className="text-2xl md:text-4xl font-serif font-medium text-[#1F2D3D]">
-              Proses Pekerjaan
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {project.processPhotos.map((photo, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="aspect-square rounded-2xl overflow-hidden group cursor-pointer"
-                onClick={() => setSelectedImage(photo)} // Trigger lightbox
-              >
-                <img
-                  src={photo}
-                  alt={`Proses ${idx + 1}`}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </motion.div>
-            ))}
-          </div>
+        <div className="mb-12">
+          <p className="text-gray-700 text-sm md:text-base font-sans leading-relaxed text-justify">
+            {project.description}
+          </p>
         </div>
-      )}
+
+        {project.processPhotos && project.processPhotos.length > 0 && (
+          <div className="mt-16 md:mt-24">
+            <div className="mb-10">
+              <span className="text-xs md:text-sm font-sans font-bold text-[#F1C453] uppercase tracking-widest mb-2 block">
+                Galeri
+              </span>
+              <h2 className="text-3xl md:text-4xl font-serif font-medium text-[#1F2D3D]">Proses Pekerjaan</h2>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+              {project.processPhotos.map((photo, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="aspect-square rounded-2xl overflow-hidden group cursor-pointer ring-1 ring-black/5"
+                  onClick={() => setSelectedImage(photo)}
+                >
+                  <img
+                    src={photo}
+                    alt={`Proses ${idx + 1}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {project.resultPhotos && project.resultPhotos.length > 0 && (
+          <div className="mt-16 md:mt-24">
+            <div className="mb-10">
+              <h2 className="text-3xl md:text-4xl font-serif font-medium text-[#1F2D3D]">Hasil</h2>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+              {project.processPhotos.map((photo, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="aspect-square rounded-2xl overflow-hidden group cursor-pointer ring-1 ring-black/5"
+                  onClick={() => setSelectedImage(photo)}
+                >
+                  <img
+                    src={photo}
+                    alt={`Proses ${idx + 1}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
 
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 md:p-12 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 backdrop-blur-md"
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute top-6 right-6 md:top-10 md:right-10 text-white/70 hover:text-white transition-colors z-50"
+            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors p-2"
             onClick={() => setSelectedImage(null)}
           >
-            <X size={32} />
+            <X size={40} />
           </button>
 
           <motion.img
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.2 }}
             src={selectedImage}
-            alt="Preview"
-            className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
-            onClick={(e) => e.stopPropagation()} // Mencegah tertutup jika gambar yang ditekan
+            alt="Preview Full"
+            className="max-w-full max-h-[90vh] object-contain rounded-sm shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}
