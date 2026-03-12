@@ -41,7 +41,7 @@ export default function Contact() {
               Mulai Proyek Anda
             </h2>
           </div>
-          <p className="text-[#FAF8F5]/50 font-sans text-xs md:text-md leading-relaxed max-w-xs md:text-right">
+          <p className="text-[#FAF8F5]/50 font-sans text-xs md:text-base leading-relaxed max-w-xs md:text-right">
             Kami siap mewujudkan visi Anda. Mari ciptakan sesuatu yang luar biasa bersama kami.
           </p>
         </div>
@@ -59,10 +59,10 @@ export default function Contact() {
                     <Icon className="w-3.5 h-3.5 md:w-5 md:h-5 text-[#FAF8F5] group-hover:text-[#1F2D3D] transition-colors duration-300" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <strong className="block text-sm md:text-lg uppercase text-[#FAF8F5]/35 mb-0.5">
+                    <strong className="block text-sm md:text-base uppercase text-[#FAF8F5]/35 mb-0.5">
                       {label}
                     </strong>
-                    <p className="font-sans text-xs md:text-md text-[#FAF8F5]/75 leading-[1.3] md:leading-[1.4] m-0">
+                    <p className="font-sans text-xs md:text-base text-[#FAF8F5]/75 leading-[1.3] md:leading-[1.4] m-0">
                       {value}
                     </p>
                   </div>

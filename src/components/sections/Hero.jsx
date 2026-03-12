@@ -20,7 +20,7 @@ export default function Hero() {
         className="absolute inset-0 z-0 -top-[10%] h-[120%] w-full"
       >
         <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1500&auto=format&fit=crop"
+          src="https://i.ibb.co.com/SDpt5CtT/Gemini-Generated-Image-nuqw53nuqw53nuqw-1.png"
           alt="Luxury Architecture"
           className="w-full h-full object-cover object-center"
         />
@@ -30,15 +30,6 @@ export default function Hero() {
 
       <div className="relative z-20 max-w-7xl w-full mx-auto px-6 md:px-12 flex flex-col justify-center">
         <div className="max-w-2xl pt-16 md:pt-0">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <span className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#F1C453] mb-4 md:mb-5 block font-sans font-medium">
-              Since 2013
-            </span>
-          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -57,7 +48,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.5 }}
             className="text-[#FAF8F5]/80 font-sans text-xs sm:text-sm md:text-base leading-relaxed mb-8 md:mb-10 max-w-lg"
           >
-            MS-Construction hadir sebagai kontraktor terpercaya di Kalimantan Selatan.
+            MS Construction hadir sebagai kontraktor terpercaya di Kalimantan Selatan.
             Melayani jasa konstruksi dan desain rumah sejak 2013.
           </motion.p>
 
@@ -69,13 +60,13 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="bg-[#F1C453] text-[#1F2D3D] px-6 py-3 md:px-8 md:py-4 text-xs md:text-sm font-sans font-bold transition-all duration-300 hover:bg-[#FAF8F5] rounded-sm shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="bg-[#F1C453] text-[#1F2D3D] px-6 py-3 md:px-8 md:py-3 text-xs md:text-sm font-sans font-bold transition-all duration-300 hover:bg-[#FAF8F5] rounded-sm shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               Lihat Proyek Kami
             </a>
             <a
               href="#services"
-              className="text-xs md:text-sm font-semibold text-[#FAF8F5] transition-all duration-300 hover:text-[#F1C453] px-6 py-3 md:px-8 md:py-4 border border-[#FAF8F5]/30 hover:border-[#F1C453] rounded-sm backdrop-blur-sm bg-white/5 hover:bg-white/10"
+              className="text-xs md:text-sm font-semibold text-[#FAF8F5] transition-all duration-300 hover:text-[#F1C453] px-6 py-3 md:px-8 md:py-3 border border-[#FAF8F5]/30 hover:border-[#F1C453] rounded-sm backdrop-blur-sm bg-white/5 hover:bg-white/10"
             >
               Layanan
             </a>

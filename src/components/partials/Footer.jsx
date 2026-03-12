@@ -22,7 +22,7 @@ export default function Footer() {
           <a
             href={`https://wa.me/${COMPANY.phone}`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 flex-shrink-0 bg-[#1F2D3D] text-[#F1C453] font-sans text-[10px] md:text-xs uppercase font-bold px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-black transition-colors w-fit"
           >
             <span>Hubungi Kami</span>
@@ -37,9 +37,9 @@ export default function Footer() {
 
           <div>
             <Link to="/" className="inline-block mb-4 md:mb-6">
-              <img src={logo} alt="MS-Construction" className="h-8 md:h-12 w-auto object-contain" />
+              <img src={logo} alt="MS-Construction" loading="lazy" className="h-8 md:h-12 w-auto object-contain" />
             </Link>
-            <p className="text-[#FAF8F5]/50 font-sans text-xs md:text-md leading-relaxed mb-6 md:mb-8 max-w-xs">
+            <p className="text-[#FAF8F5]/50 font-sans text-xs md:text-base leading-relaxed mb-6 md:mb-8 max-w-xs">
               {COMPANY.slogan}. {COMPANY.tagline}. Melayani jasa desain dan konstruksi terpercaya di Kalimantan.
             </p>
             <div className="flex flex-wrap items-center gap-3">
@@ -51,6 +51,8 @@ export default function Footer() {
                 <a
                   key={id}
                   href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={id}
                   className="p-2 md:p-2.5 rounded-full border border-white/10 text-[#FAF8F5]/40 hover:border-[#F1C453] hover:text-[#F1C453] hover:bg-white/5 transition-all"
                 >
@@ -71,7 +73,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-xs md:text-md font-sans text-[#FAF8F5]/50 hover:text-[#FAF8F5] transition-colors"
+                      className="text-xs md:text-base font-sans text-[#FAF8F5]/50 hover:text-[#FAF8F5] transition-colors"
                     >
                       {link.label}
                     </a>
@@ -90,9 +92,6 @@ export default function Footer() {
                   <div className="mt-1 w-6 h-6 md:w-8 md:h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F1C453] transition-colors duration-300">
                     <Mail className="w-3 h-3 md:w-4 md:h-4 text-[#F1C453] group-hover:text-[#1F2D3D] transition-colors duration-300" />
                   </div>
-                  <a href={`mailto:hello@${COMPANY.instagram}.com`} className="hover:text-[#FAF8F5] transition-colors break-all mt-0.5 md:mt-1 self-center">
-                    hello@{COMPANY.instagram}.com
-                  </a>
                 </li>
                 <li className="flex items-center gap-3 group">
                   <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F1C453] transition-colors duration-300">

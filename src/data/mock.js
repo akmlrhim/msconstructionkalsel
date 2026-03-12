@@ -53,48 +53,7 @@ export const SERVICES = [
   },
 ];
 
-export const PROJECTS = [
-  {
-    id: 1,
-    title: "Bangun Rumah 2 Lantai Minimalis Modern",
-    category: "Rumah Tinggal",
-    location: "Banjarbaru",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",
-    wide: true,
-    dark: false,
-  },
-  {
-    id: 2,
-    title: "Renovasi Total Rumah",
-    category: "Renovasi",
-    location: "Banjarmasin",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop",
-    wide: false,
-    dark: true,
-  },
-  {
-    id: 3,
-    title: "Bangun Ruko 3 Lantai",
-    category: "Ruko",
-    location: "Martapura",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop",
-    wide: false,
-    dark: false,
-  },
-  {
-    id: 4,
-    title: "Desain Interior Modern",
-    category: "Interior",
-    location: "Banjarbaru",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2070&auto=format&fit=crop",
-    wide: false,
-    dark: true,
-  },
-];
+
 
 export const ADVANTAGES = [
   {

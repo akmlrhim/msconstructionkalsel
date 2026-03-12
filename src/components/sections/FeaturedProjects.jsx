@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { PROJECTS } from "../../data/mock";
-import { ChevronRight } from "lucide-react";
+import { PROJECTS } from "../../data/projects";
+import { Link } from "react-router-dom";
 
 export default function FeaturedProjects() {
   return (
@@ -38,40 +38,31 @@ export default function FeaturedProjects() {
 
 function ProjectCard({ project, index }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      className="group relative min-w-[80vw] md:min-w-0 snap-center h-[300px] md:h-[480px] overflow-hidden rounded-2xl flex-shrink-0 cursor-pointer"
-    >
-      <img
-        src={project.image}
-        alt={project.title}
-        className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-      />
+    <Link to={`/project/${project.id}`}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        className="group relative min-w-[80vw] md:min-w-0 snap-center h-[200px] md:h-[380px] overflow-hidden rounded-2xl flex-shrink-0 cursor-pointer"
+      >
+        <img
+          src={project.image}
+          alt={project.title}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+        />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
-      <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-8">
-        <div className="flex items-end justify-between gap-3">
+        <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-8">
           <div className="min-w-0">
-            <span className="text-[#F1C453] text-xs md:text-md font-sans font-semibold mb-1 md:mb-2 block">
-              {project.category} · {project.year}
-            </span>
-            <h3 className="text-base md:text-lg text-white font-sans font-bold leading-tight capitalize">
+            <h3 className="self-center text-base md:text-lg text-white font-sans font-bold leading-tight capitalize">
               {project.title}
             </h3>
-            <p className="text-white/55 text-xs md:text-md mt-0.5 md:mt-1">
-              {project.location}
-            </p>
-          </div>
-
-          <div className="w-9 h-9 md:w-12 md:h-12 shrink-0 rounded-full bg-[#F1C453] flex items-center justify-center text-[#1F2D3D] shadow-md transition-transform duration-300 group-hover:scale-110">
-            <span className="text-sm md:text-lg leading-none"><ChevronRight /></span>
           </div>
         </div>
-      </div>
-    </motion.div >
+      </motion.div>
+    </Link>
   );
 }

@@ -24,8 +24,16 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section id="why-us" className="py-12 lg:py-20 bg-[#1F2D3D] text-[#FAF8F5] overflow-hidden">
-      <div className="max-w-6xl mx-auto px-5 md:px-12">
+    <section id="why-us" className="relative py-12 lg:py-20 bg-[#1F2D3D] text-[#FAF8F5] overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(#FAF8F5 2px, transparent 2px)',
+          backgroundSize: '32px 32px'
+        }}
+      />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-12">
 
         <div className="mb-6 md:mb-10">
           <span className="text-md md:text-lg font-sans font-semibold text-[#F1C453] mb-1.5 block">
@@ -39,7 +47,7 @@ export default function WhyChooseUs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 items-center">
 
           <div className="flex flex-col gap-3 md:gap-5">
-            <p className="text-[#FAF8F5]/70 font-sans text-xs md:text-sm leading-relaxed max-w-sm">
+            <p className="text-[#FAF8F5]/70 font-sans text-xs md:text-base leading-relaxed max-w-sm">
               Lebih dari sekadar spesifik, kami menyediakan layanan dengan gaya desain minimalis yang fleksibel dan berfokus pada kualitas hidup keluarga Anda.
             </p>
 
@@ -82,7 +90,7 @@ export default function WhyChooseUs() {
                 }}
                 className="absolute inset-0 flex items-center"
               >
-                <div className="w-full bg-white/5 border border-white/10 rounded-xl p-4 md:p-8 relative">
+                <div className="w-full bg-white/5 border border-white/10 rounded-xl p-4 md:p-8 relative backdrop-blur-sm">
                   <div className="absolute -top-3.5 right-4 md:right-7 w-7 h-7 md:w-10 md:h-10 bg-[#F1C453] flex items-center justify-center rounded-full shadow-md">
                     <Check className="w-3 h-3 md:w-4 md:h-4 text-[#1F2D3D]" />
                   </div>

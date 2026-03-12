@@ -24,7 +24,7 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${isScrolled
-          ? "bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#1F2D3D]/10 shadow-sm py-4"
+          ? "bg-[#FAF8F5]/90 backdrop-blur-lg border-b border-[#1F2D3D]/10 shadow-sm py-4"
           : "bg-transparent py-6"
           }`}
       >
@@ -47,7 +47,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-medium font-sans capitalize transition-colors duration-300 ${isScrolled
+                className={`text-sm font-medium font-sans capitalize transition-colors duration-300 ${isScrolled || location.pathname !== '/'
                   ? "text-[#1F2D3D]/80 hover:text-[#F1C453]"
                   : "text-[#FAF8F5]/90 hover:text-[#F1C453]"
                   }`}
@@ -58,7 +58,7 @@ export default function Navbar() {
             <a
               href={`https://wa.me/${COMPANY.phone}`}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={`px-6 py-2.5 text-sm font-sans font-semibold transition-all duration-300 rounded-sm ${isScrolled
                 ? "bg-[#1F2D3D] text-[#FAF8F5] hover:bg-[#F1C453] hover:text-[#1F2D3D]"
                 : "bg-[#F1C453] text-[#1F2D3D] hover:bg-[#FAF8F5]"
@@ -75,15 +75,15 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             <span
-              className={`block w-6 h-[2px] transition-all duration-300 rounded-full ${isScrolled || isOpen ? "bg-[#1F2D3D]" : "bg-[#FAF8F5]"
+              className={`block w-6 h-[2px] transition-all duration-300 rounded-full ${isScrolled || isOpen || location.pathname !== '/' ? "bg-[#1F2D3D]" : "bg-[#FAF8F5]"
                 } ${isOpen ? "rotate-45 translate-y-[8px]" : ""}`}
             ></span>
             <span
-              className={`block w-6 h-[2px] transition-all duration-300 rounded-full ${isScrolled || isOpen ? "bg-[#1F2D3D]" : "bg-[#FAF8F5]"
+              className={`block w-6 h-[2px] transition-all duration-300 rounded-full ${isScrolled || isOpen || location.pathname !== '/' ? "bg-[#1F2D3D]" : "bg-[#FAF8F5]"
                 } ${isOpen ? "opacity-0" : "opacity-100"}`}
             ></span>
             <span
-              className={`block w-6 h-[2px] transition-all duration-300 rounded-full ${isScrolled || isOpen ? "bg-[#1F2D3D]" : "bg-[#FAF8F5]"
+              className={`block w-6 h-[2px] transition-all duration-300 rounded-full ${isScrolled || isOpen || location.pathname !== '/' ? "bg-[#1F2D3D]" : "bg-[#FAF8F5]"
                 } ${isOpen ? "-rotate-45 -translate-y-[8px]" : ""}`}
             ></span>
           </button>
@@ -119,7 +119,7 @@ export default function Navbar() {
               transition={{ delay: 0.6 }}
               href={`https://wa.me/${COMPANY.phone}`}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="mt-4 px-8 py-3 bg-[#1F2D3D] text-[#FAF8F5] font-sans font-semibold text-sm hover:bg-[#F1C453] hover:text-[#1F2D3D] transition-colors rounded-sm shadow-md"
             >
               Mulai Proyek
