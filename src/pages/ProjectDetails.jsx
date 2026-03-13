@@ -83,12 +83,41 @@ export default function ProjectDetails() {
           </p>
         </div>
 
-        {project.processPhotos && project.processPhotos.length > 0 && (
+        {project.designPhotos && project.designPhotos.length > 0 && (
           <div className="mt-16 md:mt-24">
             <div className="mb-10">
               <span className="text-xs md:text-sm font-sans font-bold text-[#F1C453] uppercase tracking-widest mb-2 block">
                 Galeri
               </span>
+              <h2 className="text-3xl md:text-4xl font-serif font-medium text-[#1F2D3D]">Design / Render</h2>
+            </div>
+
+            <div className="grid grid-cols-3 gap-4 md:gap-8">
+              {project.designPhotos.map((photo, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="aspect-square rounded-2xl overflow-hidden group cursor-pointer ring-1 ring-black/5"
+                  onClick={() => setSelectedImage(photo)}
+                >
+                  <img
+                    src={photo}
+                    alt={`Proses ${idx + 1}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {project.processPhotos && project.processPhotos.length > 0 && (
+          <div className="mt-16 md:mt-24">
+            <div className="mb-10">
               <h2 className="text-3xl md:text-4xl font-serif font-medium text-[#1F2D3D]">Proses Pekerjaan</h2>
             </div>
 
@@ -121,8 +150,8 @@ export default function ProjectDetails() {
               <h2 className="text-3xl md:text-4xl font-serif font-medium text-[#1F2D3D]">Hasil</h2>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-              {project.processPhotos.map((photo, idx) => (
+            <div className="grid grid-cols-3 gap-4 md:gap-8">
+              {project.resultPhotos.map((photo, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
