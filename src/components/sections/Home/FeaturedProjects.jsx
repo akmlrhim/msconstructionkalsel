@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { PROJECTS } from "../../data/projects";
+import { PROJECTS } from "../../../data/projects";
 import { Link } from "react-router-dom";
 
 export default function FeaturedProjects() {

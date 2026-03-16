@@ -7,13 +7,14 @@ export const COMPANY = {
   phoneDisplay: "+62 821-1029-2211",
   instagram: "msc0nstruction",
   instagramFollowers: "1.079",
-  address: "Jl. Pondok Kelapa Raya Komplek Balitra Jaya Permai No.V5 Blok Bahrain Kelurahan Loktabat Utara Kecamatan Banjarbaru Utara Kota Banjarbaru Kalimantan Selatan, Banjarbaru 70712",
+  address:
+    "Jl. Pondok Kelapa Raya Komplek Balitra Jaya Permai No.V5 Blok Bahrain Kelurahan Loktabat Utara Kecamatan Banjarbaru Utara Kota Banjarbaru Kalimantan Selatan, Banjarbaru 70712",
   addressShort: "Jl. Pondok Kelapa Raya, Banjarbaru, Kalsel 70712",
   year: 2015,
   stats: [
     { value: "8+", label: "Tahun Pengalaman" },
     { value: "27+", label: "Proyek Selesai" },
-    { value: "1K+", label: "Pengikut IG" },
+    { value: "98%", label: "Customer Puas" },
   ],
   areas: ["Banjarmasin", "Banjarbaru", "Banjar", "Tanjung", "Balangan"],
 };
@@ -52,8 +53,6 @@ export const SERVICES = [
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1500&auto=format&fit=crop",
   },
 ];
-
-
 
 export const ADVANTAGES = [
   {
@@ -137,7 +136,7 @@ export const WHY_CHOOSE_US = [
   "Meningkatkan nilai jual bangunan",
   "Menjadi acuan terinci dan memudahkan menghitung RAB",
   "Meminimalkan kesalahan pengerjaan",
-  "Dapat digunakan panduan mengawasi kontraktor"
+  "Dapat digunakan panduan mengawasi kontraktor",
 ];
 
 export const NAV_LINKS = [

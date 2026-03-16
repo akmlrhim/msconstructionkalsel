@@ -1,4 +1,4 @@
-import { COMPANY } from "../../data/mock";
+import { COMPANY } from "../../../data/mock";
 import { Mail, Phone, MapPin, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
@@ -26,20 +26,18 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-28 bg-[#1F2D3D] relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-16 md:py-28 bg-[#1F2D3D] relative overflow-hidden"
+    >
       <div className="absolute -top-32 -right-32 w-72 h-72 md:w-[500px] md:h-[500px] rounded-full bg-[#F1C453]/5 pointer-events-none" />
       <div className="absolute -bottom-20 -left-20 w-48 h-48 md:w-72 md:h-72 rounded-full bg-[#FAF8F5]/3 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-12 relative z-10">
-
         <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-3">
           <div>
-            <span className="text-sm md:text-md font-sans font-semibold text-[#F1C453] mb-2 block">
-              Hubungi Kami
-            </span>
-            <h2 className="text-2xl md:text-5xl font-serif text-[#FAF8F5] leading-tight">
-              Mulai Proyek Anda
-            </h2>
+            <span className="text-sm md:text-md font-sans font-semibold text-[#F1C453] mb-2 block">Hubungi Kami</span>
+            <h2 className="text-2xl md:text-5xl font-serif text-[#FAF8F5] leading-tight">Mulai Proyek Anda</h2>
           </div>
           <p className="text-[#FAF8F5]/50 font-sans text-xs md:text-base leading-relaxed max-w-xs md:text-right">
             Kami siap mewujudkan visi Anda. Mari ciptakan sesuatu yang luar biasa bersama kami.
@@ -47,7 +45,6 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-10 items-start">
-
           <div className="lg:col-span-2 flex flex-col gap-5 md:gap-8">
             <div className="flex flex-col gap-3">
               {contacts.map(({ icon: Icon, label, value }) => (
@@ -59,9 +56,7 @@ export default function Contact() {
                     <Icon className="w-3.5 h-3.5 md:w-5 md:h-5 text-[#FAF8F5] group-hover:text-[#1F2D3D] transition-colors duration-300" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <strong className="block text-sm md:text-base uppercase text-[#FAF8F5]/35 mb-0.5">
-                      {label}
-                    </strong>
+                    <strong className="block text-sm md:text-base uppercase text-[#FAF8F5]/35 mb-0.5">{label}</strong>
                     <p className="font-sans text-xs md:text-base text-[#FAF8F5]/75 leading-[1.3] md:leading-[1.4] m-0">
                       {value}
                     </p>
@@ -96,10 +91,18 @@ export default function Contact() {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="flex flex-col gap-6 md:gap-8">
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-6 md:gap-8"
+              >
                 {fields.map(({ name, label, type }) => (
-                  <div key={name} className="relative">
-                    <div className={`border-b transition-colors duration-300 ${focused === name ? "border-[#F1C453]" : "border-white/12"}`}>
+                  <div
+                    key={name}
+                    className="relative"
+                  >
+                    <div
+                      className={`border-b transition-colors duration-300 ${focused === name ? "border-[#F1C453]" : "border-white/12"}`}
+                    >
                       <input
                         type={type}
                         name={name}
@@ -119,7 +122,9 @@ export default function Contact() {
                 ))}
 
                 <div className="relative">
-                  <div className={`border-b transition-colors duration-300 ${focused === "message" ? "border-[#F1C453]" : "border-white/12"}`}>
+                  <div
+                    className={`border-b transition-colors duration-300 ${focused === "message" ? "border-[#F1C453]" : "border-white/12"}`}
+                  >
                     <textarea
                       name="message"
                       value={formData.message}
@@ -146,7 +151,6 @@ export default function Contact() {
               </form>
             </div>
           </div>
-
         </div>
       </div>
     </section>

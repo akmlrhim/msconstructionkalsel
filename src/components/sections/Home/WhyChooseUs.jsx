@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { WHY_CHOOSE_US } from "../../data/mock";
+import { WHY_CHOOSE_US } from "../../../data/mock";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function WhyChooseUs() {
@@ -24,17 +24,19 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section id="why-us" className="relative py-12 lg:py-20 bg-[#1F2D3D] text-[#FAF8F5] overflow-hidden">
+    <section
+      id="why-us"
+      className="relative py-12 lg:py-20 bg-[#1F2D3D] text-[#FAF8F5] overflow-hidden"
+    >
       <div
         className="absolute inset-0 opacity-[0.05] pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(#FAF8F5 2px, transparent 2px)',
-          backgroundSize: '32px 32px'
+          backgroundImage: "radial-gradient(#FAF8F5 2px, transparent 2px)",
+          backgroundSize: "32px 32px",
         }}
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-12">
-
         <div className="mb-6 md:mb-10">
           <span className="text-md md:text-lg font-sans font-semibold text-[#F1C453] mb-1.5 block">
             Keunggulan Kami
@@ -45,10 +47,10 @@ export default function WhyChooseUs() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 items-center">
-
           <div className="flex flex-col gap-3 md:gap-5">
             <p className="text-[#FAF8F5]/70 font-sans text-xs md:text-base leading-relaxed max-w-sm">
-              Lebih dari sekadar spesifik, kami menyediakan layanan dengan gaya desain minimalis yang fleksibel dan berfokus pada kualitas hidup keluarga Anda.
+              Lebih dari sekadar spesifik, kami menyediakan layanan dengan gaya desain minimalis yang fleksibel dan
+              berfokus pada kualitas hidup keluarga Anda.
             </p>
 
             <div className="flex items-center gap-4">
@@ -76,7 +78,10 @@ export default function WhyChooseUs() {
           </div>
 
           <div className="relative h-[160px] sm:h-[180px] md:h-[220px] lg:h-[240px]">
-            <AnimatePresence initial={false} custom={direction}>
+            <AnimatePresence
+              initial={false}
+              custom={direction}
+            >
               <motion.div
                 key={currentIndex}
                 custom={direction}
@@ -101,7 +106,6 @@ export default function WhyChooseUs() {
               </motion.div>
             </AnimatePresence>
           </div>
-
         </div>
       </div>
     </section>

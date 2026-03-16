@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import ProjectDetails from "./pages/ProjectDetails";
 import Layout from "./components/partials/Layout";
-import LoadingSkeleton from "./components/partials/LoadingSkeleton";
+import LoadingSkeleton from "./components/ui/LoadingSkeleton";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

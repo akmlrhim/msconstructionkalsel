@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { PROJECTS } from "../data/projects";
-import { ArrowLeft, Calendar, MapPin, User, Clock, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, X } from "lucide-react";
+import { motion } from "framer-motion";
+import ImageSkeleton from "../components/ui/ImageSkeleton";
 
 export default function ProjectDetails() {
   const { id } = useParams();
   const [project, setProject] = useState(null);
-
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    // Find project by id
     const foundProject = PROJECTS.find((p) => p.id === parseInt(id));
     setProject(foundProject);
   }, [id]);
@@ -56,18 +54,19 @@ export default function ProjectDetails() {
           Kembali
         </Link>
 
+        {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="relative h-[40vh] md:h-[65vh] rounded-3xl overflow-hidden mb-10 shadow-2xl"
         >
-          <img
+          <ImageSkeleton
             src={project.image}
             alt={project.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-          <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16 pointer-events-none">
             <span className="text-[#F1C453] font-semibold text-xs md:text-lg mb-2 uppercase tracking-wider">
               {project.category}
             </span>
@@ -77,12 +76,15 @@ export default function ProjectDetails() {
           </div>
         </motion.div>
 
-        <div className="mb-12">
-          <p className="text-gray-700 text-sm md:text-base font-sans leading-relaxed text-justify">
-            {project.description}
-          </p>
-        </div>
+        {project.description && (
+          <div className="mb-12">
+            <p className="text-gray-700 text-sm md:text-base font-sans leading-relaxed text-justify">
+              {project.description}
+            </p>
+          </div>
+        )}
 
+        {/* Design / Render Photos */}
         {project.designPhotos && project.designPhotos.length > 0 && (
           <div className="mt-16 md:mt-24">
             <div className="mb-10">
@@ -91,23 +93,20 @@ export default function ProjectDetails() {
               </span>
               <h2 className="text-3xl md:text-4xl font-serif font-medium text-[#1F2D3D]">Design / Render</h2>
             </div>
-
             <div className="grid grid-cols-3 gap-4 md:gap-8">
               {project.designPhotos.map((photo, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="aspect-square rounded-2xl overflow-hidden group cursor-pointer ring-1 ring-black/5"
+                  viewport={{ once: true, margin: "50px" }}
+                  className="aspect-square rounded-2xl overflow-hidden group cursor-pointer ring-1 ring-black/5 will-change-transform"
                   onClick={() => setSelectedImage(photo)}
                 >
-                  <img
+                  <ImageSkeleton
                     src={photo}
-                    alt={`Proses ${idx + 1}`}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    alt={`Design ${idx + 1}`}
+                    className="w-full h-full"
                   />
                 </motion.div>
               ))}
@@ -115,28 +114,26 @@ export default function ProjectDetails() {
           </div>
         )}
 
+        {/* Process Photos */}
         {project.processPhotos && project.processPhotos.length > 0 && (
           <div className="mt-16 md:mt-24">
             <div className="mb-10">
               <h2 className="text-3xl md:text-4xl font-serif font-medium text-[#1F2D3D]">Proses Pekerjaan</h2>
             </div>
-
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
               {project.processPhotos.map((photo, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="aspect-square rounded-2xl overflow-hidden group cursor-pointer ring-1 ring-black/5"
+                  viewport={{ once: true, margin: "50px" }}
+                  className="aspect-square rounded-2xl overflow-hidden group cursor-pointer ring-1 ring-black/5 will-change-transform"
                   onClick={() => setSelectedImage(photo)}
                 >
-                  <img
+                  <ImageSkeleton
                     src={photo}
                     alt={`Proses ${idx + 1}`}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full"
                   />
                 </motion.div>
               ))}
@@ -144,28 +141,26 @@ export default function ProjectDetails() {
           </div>
         )}
 
+        {/* Result Photos */}
         {project.resultPhotos && project.resultPhotos.length > 0 && (
           <div className="mt-16 md:mt-24">
             <div className="mb-10">
               <h2 className="text-3xl md:text-4xl font-serif font-medium text-[#1F2D3D]">Hasil</h2>
             </div>
-
-            <div className="grid grid-cols-3 gap-4 md:gap-8">
+            <div className="grid grid-cols-4 gap-4 md:gap-8">
               {project.resultPhotos.map((photo, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="aspect-square rounded-2xl overflow-hidden group cursor-pointer ring-1 ring-black/5"
+                  viewport={{ once: true, margin: "50px" }}
+                  className="aspect-square rounded-2xl overflow-hidden group cursor-pointer ring-1 ring-black/5 will-change-transform"
                   onClick={() => setSelectedImage(photo)}
                 >
-                  <img
+                  <ImageSkeleton
                     src={photo}
-                    alt={`Proses ${idx + 1}`}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    alt={`Hasil ${idx + 1}`}
+                    className="w-full h-full"
                   />
                 </motion.div>
               ))}

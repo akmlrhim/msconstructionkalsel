@@ -20,7 +20,7 @@ export default function Footer() {
             href={`https://wa.me/${COMPANY.phone}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 flex-shrink-0 bg-[#1F2D3D] text-[#F1C453] font-sans text-[10px] md:text-xs uppercase font-bold px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-black transition-colors w-fit"
+            className="flex items-center justify-center gap-2 flex-shrink-0 bg-[#1F2D3D] text-[#F1C453] font-sans text-sm md:text-md font-bold px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-black transition-colors w-fit"
           >
             <span>Hubungi Kami</span>
             <ChevronRight
